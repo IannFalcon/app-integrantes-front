@@ -13,7 +13,7 @@ public class RestTemplateConfig {
     @Bean
     public RestTemplate restTemplateIntegrante(RestTemplateBuilder builder) {
         return builder
-                .rootUri("http://localhost:8080/integrante")
+                .rootUri("https://app-integrantes-back-fvh5aadqg0fbeka8.brazilsouth-01.azurewebsites.net/integrante")
                 .setConnectTimeout(Duration.ofSeconds(5)) // Tiempo de espera maximo para establecer la conexión
                 .setReadTimeout(Duration.ofSeconds(10)) // Tiempo de espera maximo para recibir la respuesta total
                 .build();
