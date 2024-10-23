@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Listado de integrantes</title>
@@ -9,9 +9,31 @@
 </head>
 <body>
 
-    <div class="container d-flex justify-content-center">
-        <h1 class="text-center">Listado de integrantes</h1>
-
+    <div class="container d-flex flex-column justify-content-center">
+        <h1 class="text-center mb-4">Listado de integrantes</h1>
+        <div th:if="${listadoModel != null}">
+            <div class="alert alert-danger" role="alert" th:if="${listadoModel.codigo != '00'}">
+                <span th:text="${listadoModel.mensaje}"></span>
+            </div>
+            <div th:if="${listadoModel.integrantes}">
+                <table class="table table-striped">
+                    <thead class="table-dark">
+                    <tr>
+                        <th>Codigo</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="integrante : ${listadoModel.integrantes()}">
+                        <td th:text="${integrante.codigo()}"></td>
+                        <td th:text="${integrante.nombre()}"></td>
+                        <td th:text="${integrante.apellido()}"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 
 </body>

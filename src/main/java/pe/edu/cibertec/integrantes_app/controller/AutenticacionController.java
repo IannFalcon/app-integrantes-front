@@ -62,7 +62,7 @@ public class AutenticacionController {
 
                     LoginModel loginModel = new LoginModel("00", "Bienvenido: " + loginResponseDTO.nombre() + " " + loginResponseDTO.apellido());
                     model.addAttribute("loginModel", loginModel);
-                    return "principal";
+                    return "redirect:/integrante/listar";
 
                 } else {
 
