@@ -1,5 +1,5 @@
 .container {
-    width: 650px;
+    width: 500px;
     height: 100vh;
 }
 
@@ -9,4 +9,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.form-container form {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ccc;
+}
+
+table {
+    border: 1px solid #ccc;
 }

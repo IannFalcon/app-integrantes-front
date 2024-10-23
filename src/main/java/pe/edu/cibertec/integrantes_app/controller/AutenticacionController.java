@@ -88,6 +88,16 @@ public class AutenticacionController {
             return "inicio";
 
         }
+
+    }
+
+    @PostMapping("/cerrar-sesion")
+    public String cerrarSesion(Model model) {
+
+        LoginModel loginModel = new LoginModel("00", "");
+        model.addAttribute("loginModel", loginModel);
+        return "redirect:/autenticacion/inicio";
+
     }
 
 }
